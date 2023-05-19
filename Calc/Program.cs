@@ -41,8 +41,71 @@ namespace Calc
                     break;
                 }
 
+                do
+                {
+                    Console.WriteLine("Ingresa el primer número: ");
+                    string input = Console.ReadLine();
 
+                    if (int.TryParse(input, out num))
+                    {
+                        Console.WriteLine(" ");
+                        break;
+                    }
+                    else
+                    {
+                        Console.WriteLine("Entrada inválida. ");
+                    }
+                } while (true);
 
+                do
+                {
+                    Console.WriteLine("Ingresa el segundo número: ");
+                    string input = Console.ReadLine();
+
+                    if (int.TryParse(input, out num2))
+                    {
+                        Console.WriteLine("");
+                        break;
+                    }
+                    else
+                    {
+                        Console.WriteLine("Entrada inválida. ");
+                    }
+                } while (true);
+
+                switch (opcion)
+                {
+                    case 1:
+                        resultado = num + num2;
+                        Console.WriteLine("El resultado de la suma es: " + resultado);
+                        break;
+
+                    case 2:
+                        resultado = num - num2;
+                        Console.WriteLine("El resultado de la resta es: " + resultado);
+                        break;
+
+                    case 3:
+                        resultado = num * num2;
+                        Console.WriteLine("El resultado de la multiplicación es: " + resultado);
+                        break;
+
+                    case 4:
+                        if (num2 == 0)
+                        {
+                            Console.WriteLine("No se puede dividir entre cero");
+                        }
+                        else
+                        {
+                            resultado = num / num2;
+                            Console.WriteLine("El resultado de la división es: " + resultado);
+                        }
+                        break;
+
+                    default:
+                        Console.WriteLine("Opción inválida");
+                        break;
+                }
             } while (opcion != 5);
 
             Console.WriteLine("Programa finalizado");
